@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheng.Mapper", "Sheng.Mappe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheng.Mapper.Test", "Sheng.Mapper.Test\Sheng.Mapper.Test.csproj", "{B5C4FC30-3738-42BE-824A-2E8A69D5965A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheng.Mapper.Benchmark", "Sheng.Mapper.Benchmark\Sheng.Mapper.Benchmark.csproj", "{9B29805F-C4BB-4DE7-8561-E5AE2114D8FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B5C4FC30-3738-42BE-824A-2E8A69D5965A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5C4FC30-3738-42BE-824A-2E8A69D5965A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5C4FC30-3738-42BE-824A-2E8A69D5965A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B29805F-C4BB-4DE7-8561-E5AE2114D8FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B29805F-C4BB-4DE7-8561-E5AE2114D8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B29805F-C4BB-4DE7-8561-E5AE2114D8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B29805F-C4BB-4DE7-8561-E5AE2114D8FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
