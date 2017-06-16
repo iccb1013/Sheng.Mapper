@@ -7,3 +7,8 @@
 + 如果要支持类型不一致的属性自动进行类型转换，你可以在 PropertyMappingDescription 这个类中实现转换器功能
 + 拷贝行为 不会 改变 targetObject 中不需要被拷贝的属性的值
 + 你可以组合使用几个方法来从多个对象中拷贝指定的属性值到一个 targetObject
+
+和 AutoMapper 互补，与之相比最大优势是短，平，快。不需要创建复杂的映射规则，并支持属性排除操作。
+
+详细说明：
+http://sheng.city/post/github-mapper-sheng-mapper
