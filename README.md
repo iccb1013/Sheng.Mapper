@@ -11,4 +11,4 @@
 和 AutoMapper 互补，与之相比最大优势是短，平，快。不需要创建复杂的映射规则，并支持属性排除操作。
 
 详细说明：
-http://sheng.city/post/github-mapper-sheng-mapper
+http://blog.shengxunwei.com/Home/Post/bde984a5-5c13-4667-ae8e-0e1a31e6bc2a
