@@ -22,7 +22,12 @@ namespace Sheng.Mapper
         /// <param name="targetObject"></param>
         public static void SetValues(object sourceObject, object targetObject)
         {
-            SetValues(sourceObject, targetObject, null, null);
+            SetValues(sourceObject, targetObject, null, null,false);
+        }
+
+        public static void SetValuesSkipVirtual(object sourceObject, object targetObject)
+        {
+            SetValues(sourceObject, targetObject, null, null, true);
         }
 
         /// <summary>
@@ -34,7 +39,7 @@ namespace Sheng.Mapper
         /// <param name="properties"></param>
         public static void SetValuesWithProperties(object sourceObject, object targetObject, string[] properties)
         {
-            SetValues(sourceObject, targetObject, properties, null);
+            SetValues(sourceObject, targetObject, properties, null,false);
         }
 
         /// <summary>
@@ -45,10 +50,23 @@ namespace Sheng.Mapper
         /// <param name="properties"></param>
         public static void SetValuesWithoutProperties(object sourceObject, object targetObject, string[] properties)
         {
-            SetValues(sourceObject, targetObject, null, properties);
+            SetValues(sourceObject, targetObject, null, properties,false);
         }
 
-        private static void SetValues(object sourceObject, object targetObject, string[] withProperties, string[] withoutProperties)
+        public static void SetValuesWithoutProperties(object sourceObject, object targetObject, string[] properties, bool skipVirtual)
+        {
+            SetValues(sourceObject, targetObject, null, properties, skipVirtual);
+        }
+
+        /// <summary>
+        /// skipVirtual 是针对目标对象的
+        /// </summary>
+        /// <param name="sourceObject"></param>
+        /// <param name="targetObject"></param>
+        /// <param name="withProperties"></param>
+        /// <param name="withoutProperties"></param>
+        /// <param name="skipVirtual"></param>
+        private static void SetValues(object sourceObject, object targetObject, string[] withProperties, string[] withoutProperties, bool skipVirtual)
         {
 
             if (sourceObject == null || targetObject == null)
@@ -57,10 +75,10 @@ namespace Sheng.Mapper
             Type sourceObjectType = sourceObject.GetType();
             Type targetObjectType = targetObject.GetType();
 
-            TypeMappingDescription sourceObjectTypeCache = TypeMappingCache.Get(sourceObjectType);
-            TypeMappingDescription targetObjectCache = TypeMappingCache.Get(targetObjectType);
+            ShengMapperTypeDescription sourceObjectTypeCache = ShengMapperCache.Get(sourceObjectType);
+            ShengMapperTypeDescription targetObjectCache = ShengMapperCache.Get(targetObjectType);
 
-            foreach (PropertyMappingDescription sourceProperty in sourceObjectTypeCache.PropertyList)
+            foreach (ShengMapperPropertyDescription sourceProperty in sourceObjectTypeCache.PropertyList)
             {
                 if (withProperties != null && withProperties.Length > 0 && withProperties.Contains(sourceProperty.Name) == false)
                     continue;
@@ -72,6 +90,9 @@ namespace Sheng.Mapper
                     continue;
 
                 if (targetObjectCache.ContainsProperty(sourceProperty.Name) == false)
+                    continue;
+
+                if (skipVirtual && targetObjectCache.IsVirtual(sourceProperty.Name))
                     continue;
 
                 object sourcePropertyValue = sourceObjectTypeCache.GetValue(sourceObject, sourceProperty.Name);

@@ -40,8 +40,8 @@
   <ItemGroup>
     <Compile Include="ShengMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypeMappingCache.cs" />
-    <Compile Include="TypeMappingDescription.cs" />
+    <Compile Include="ShengMapperCache.cs" />
+    <Compile Include="ShengMapperDescription.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

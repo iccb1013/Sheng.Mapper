@@ -7,16 +7,16 @@ using System.Threading;
 
 namespace Sheng.Mapper
 {
-    static class TypeMappingCache
+    static class ShengMapperCache
     {
-        private static Dictionary<Type, TypeMappingDescription> _cacheList = new Dictionary<Type, TypeMappingDescription>();
+        private static Dictionary<Type, ShengMapperTypeDescription> _cacheList = new Dictionary<Type, ShengMapperTypeDescription>();
 
-        static TypeMappingCache()
+        static ShengMapperCache()
         {
 
         }
 
-        public static TypeMappingDescription Get(Type type)
+        public static ShengMapperTypeDescription Get(Type type)
         {
             if (type == null)
                 return null;
@@ -25,7 +25,7 @@ namespace Sheng.Mapper
                 return _cacheList[type];
             else
             {
-                TypeMappingDescription cacheCodon = new TypeMappingDescription(type);
+                ShengMapperTypeDescription cacheCodon = new ShengMapperTypeDescription(type);
 
                 Monitor.Enter(_cacheList);
 
