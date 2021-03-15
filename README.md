@@ -1,5 +1,7 @@
 # Sheng.Mapper
 
+请访问原版代码库，以获得最新更新: https://github.com/iccb1013/Sheng.Mapper
+
 对象属性值映射/拷贝工具。不需要创建映射规则，不要求对象类型一致，适用于简单直接的拷贝操作，可以全属性拷贝，指定属性拷贝，排除指定的属性。拷贝包含 10 个属性的对象 10 万次，耗时 4.x 秒（普通开发机）。
 
 + 拷贝行为只针对 sourceObject 和 targetObject 所共有的属性
@@ -11,4 +13,14 @@
 和 AutoMapper 互补，与之相比最大优势是短，平，快。不需要创建复杂的映射规则，并支持属性排除操作。
 
 详细说明：
-http://blog.shengxunwei.com/Home/Post/bde984a5-5c13-4667-ae8e-0e1a31e6bc2a
+https://blog.shengxunwei.com/Home/Post/bde984a5-5c13-4667-ae8e-0e1a31e6bc2a
+
+详细说明请浏览：
+https://shengxunwei.com
+
+曹旭升（sheng.c）  
+QQ:279060597  
+Email：cao.silhouette@msn.com  
+@南京 
+
+
